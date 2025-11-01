@@ -3,61 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>С Днём Рождения!</title>
+    <title>С Днём Рождения! 🎉</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        <h1 class="title-main">С Днём Рождения! 🎉</h1>
-        <p class="subtitle">Тебе сегодня исполнилось ещё на один год больше опыта и на один год ближе к мечтам</p>
-    </div>
-
-    <div class="balloons">
-        <div class="balloon balloon-1"></div>
-        <div class="balloon balloon-2"></div>
-        <div class="balloon balloon-3"></div>
-        <div class="balloon balloon-4"></div>
-        <div class="balloon balloon-5"></div>
-    </div>
-
-    <div class="confetti" id="confetti"></div>
-
-    <div class="cards-grid">
-        <div class="card card-1">
-            <div class="card-icon">✨</div>
-            <h2>Здоровья</h2>
-            <p>Чтобы каждый день был полон энергии и улыбок</p>
-        </div>
-
-        <div class="card card-2">
-            <div class="card-icon">💝</div>
-            <h2>Счастья</h2>
-            <p>Которое исходит из маленьких моментов жизни</p>
-        </div>
-
-        <div class="card card-3">
-            <div class="card-icon">🌟</div>
-            <h2>Исполнения мечт</h2>
-            <p>Чтобы всё, что ты планируешь, сбылось</p>
-        </div>
-
-        <div class="card card-4">
-            <div class="card-icon">🎯</div>
-            <h2>Успехов</h2>
-            <p>В каждом начинании, близком и важном</p>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-content">
+        <span class="nav-logo">🎂 День Рождения</span>
+        <div class="nav-dots">
+            <span class="dot active" data-section="0"></span>
+            <span class="dot" data-section="1"></span>
+            <span class="dot" data-section="2"></span>
+            <span class="dot" data-section="3"></span>
+            <span class="dot" data-section="4"></span>
         </div>
     </div>
+</nav>
 
-    <div class="message-section">
-        <h2>Спасибо за то, что ты есть! 💖</h2>
-        <p>За твою доброту, поддержку и за то, что ты просто невероятный человек. Каждый день с тобой — это подарок.</p>
+<!-- Hero Section -->
+<section class="hero" id="section-0">
+    <div class="stars"></div>
+    <div class="particles"></div>
+
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1 class="main-title">
+                <span class="title-letter">С</span>
+                <span class="title-letter">—</span>
+                <span class="title-letter">Д</span>
+                <span class="title-letter">Н</span>
+                <span class="title-letter">Ё</span>
+                <span class="title-letter">М</span>
+                <span class="title-letter">!</span>
+            </h1>
+            <div class="emoji-line">🎉 🎂 🎈 🎁 🌟</div>
+            <p class="hero-subtitle">Сегодня твой самый особенный день в году</p>
+        </div>
+
+        <button class="scroll-btn" id="scrollBtn">
+            <span>Открыть подарок</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
     </div>
 
-    <button class="action-btn" id="surpriseBtn">Нажми для сюрприза! 🎁</button>
+    <div class="balloons-container">
+        <div class="balloon balloon-lg balloon-1"></div>
+        <div class="balloon balloon-lg balloon-2"></div>
+        <div class="balloon balloon-lg balloon-3"></div>
+        <div class="balloon balloon-lg balloon-4"></div>
+        <div class="balloon balloon-lg balloon-5"></div>
+    </div>
+</section>
 
-    <div class="fireworks" id="fireworks"></div>
-</div>
+<!-- Wishes Section -->
+<section class="wishes" id="section-1">
+    <div class="section-container">
+        <h2 class="section-title">Мои пожелания для тебя ✨</h2>
+        <div class="wishes-grid">
+            <div class="wish-card wish-card-1">
+                <div class="wish-icon">💖</div>
+                <h3>Неизменная Любовь</h3>
+                <p>Чтобы люди, которые тебя окружают, дарили тебе искреннюю любовь и поддержку каждый день</p>
+                <div class="wish-accent"></div>
+            </div>
+
+            <div class="wish-card wish-card-2">
+                <div class="wish-icon">🌟</div>
+                <h3>Новые Возможности</h3>
+                <p>Чтобы каждый день приносил новые интересные возможности и неожиданные приятные встречи</p>
+                <div class="wish-accent"></div>
+            </div>
+
+            <div class="wish-card wish-card-3">
+                <div class="wish-icon">🚀</div>
+                <h3>Успех и Рост</h3>
+                <p>Чтобы всё, что ты начинаешь, было пропитано энергией и заканчивалось победой</p>
+                <div class="wish-accent"></div>
+            </div>
+
+            <div class="wish-card wish-card-4">
+                <div class="wish-icon">🌈</div>
+                <h3>Радость и Вдохновение</h3>
+                <p>Чтобы жизнь была полна ярких моментов, смеха и вдохновения на новые свершения</p>
+                <div class="wish-accent"></div>
+            </div>
+
+            <div class="wish-card wish-card-5">
+                <div class="wish-icon">💪</div>
+                <h3>Силу и Уверенность</h3>
+                <p>Чтобы ты верила в себя, в свои силы и никогда не сомневалась в своих мечтах</p>
+                <div class="wish-accent"></div>
+            </div>
+
+            <div class="wish-card wish-card-6">
+                <div class="wish-icon">✨</div>
+                <h3>Вечное Сияние</h3>
+                <p>Чтобы твоё улыбка была самой яркой в комнате и вдохновляла других на добро</p>
+                <div class="wish-accent"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Timeline Section -->
+<section class="timeline" id="section-2">
+    <div class="section-container">
+        <h2 class="section-title">Почему ты особенная 💝</h2>
+        <div class="timeline-items">
+            <div class="timeline-item timeline-item-1">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Ты добрая и отзывчивая</h3>
+                    <p>Всегда готова помочь, поддержать словом и делом. Твоё сердце открыто для окружающих.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item timeline-item-2">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Ты креативная и оригинальная</h3>
+                    <p>Видишь мир по-своему, создаёшь уникальные решения и вдохновляешь других своими идеями.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item timeline-item-3">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Ты сильная и решительная</h3>
+                    <p>Не сдаёшься перед трудностями, всегда ищешь пути решения и двигаешься вперёд.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item timeline-item-4">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Ты вдохновляешь других</h3>
+                    <p>Своим примером показываешь, как жить полной жизнью и верить в свои мечты.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item timeline-item-5">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Ты делаешь мир ярче</h3>
+                    <p>Простым присутствием, улыбкой и теплом, которое исходит от тебя каждый день.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gift Section -->
+<section class="gift-section" id="section-3">
+    <div class="section-container">
+        <h2 class="section-title">Твой подарок 🎁</h2>
+        <div class="gift-box-container">
+            <div class="gift-box" id="giftBox">
+                <div class="gift-wrap gift-wrap-1"></div>
+                <div class="gift-wrap gift-wrap-2"></div>
+                <div class="gift-bow">
+                    <div class="bow-part"></div>
+                    <div class="bow-part"></div>
+                </div>
+            </div>
+            <p class="gift-hint">Нажми на коробку!</p>
+        </div>
+
+        <div class="gift-message" id="giftMessage">
+            <div class="message-content">
+                <h3>Дорогая сестра! 💌</h3>
+                <p>Ты означаешь для меня больше, чем кажется. Спасибо за каждый момент, проведённый вместе, за твою поддержку и любовь.</p>
+                <p>Я желаю тебе, чтобы этот год был самым ярким, самым счастливым и самым успешным в твоей жизни.</p>
+                <p>Помни: ты достойна всего лучшего, что только может быть в этом мире.</p>
+                <p class="signature">С любовью и уважением ❤️</p>
+            </div>
+            <div class="confetti-burst" id="confettiBurst"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Final Section -->
+<section class="final" id="section-4">
+    <div class="section-container">
+        <div class="final-content">
+            <h2 class="final-title">С Днём Рождения! 🎉🎂🎈</h2>
+            <p class="final-text">Спасибо за то, что ты есть в моей жизни</p>
+
+            <button class="restart-btn" id="restartBtn">Начать заново ↻</button>
+
+            <div class="hearts-animation">
+                <div class="heart"></div>
+                <div class="heart"></div>
+                <div class="heart"></div>
+                <div class="heart"></div>
+                <div class="heart"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Floating elements -->
+<div class="floating-emoji" style="--emoji: '🎉'"></div>
+<div class="floating-emoji" style="--emoji: '🎂'"></div>
+<div class="floating-emoji" style="--emoji: '✨'"></div>
+<div class="floating-emoji" style="--emoji: '💖'"></div>
+<div class="floating-emoji" style="--emoji: '🌟'"></div>
 
 <script src="script.js"></script>
 </body>
