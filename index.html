@@ -3,43 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>С Днём Рождения, Сестрёнка! 🎉</title>
+    <title>С Днём Рождения! 🎉</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Caveat:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="music-toggle" id="musicBtn">🔇</button>
+
     <canvas id="confetti-canvas"></canvas>
+    <canvas id="fireworks-canvas"></canvas>
+
+    <div class="stars-container">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
 
     <div class="balloon-container">
-        <div class="balloon balloon-1">🎈</div>
-        <div class="balloon balloon-2">🎈</div>
-        <div class="balloon balloon-3">🎈</div>
-        <div class="balloon balloon-4">🎈</div>
-        <div class="balloon balloon-5">🎈</div>
+        <div class="balloon red">🎈</div>
+        <div class="balloon blue">🎈</div>
+        <div class="balloon pink">🎈</div>
+        <div class="balloon yellow">🎈</div>
+        <div class="balloon purple">🎈</div>
     </div>
 
     <div class="container">
         <div class="card">
-            <div class="cake">🎂</div>
-            <h1 class="main-title">С Днём Рождения!</h1>
-            <h2 class="subtitle">Любимая сестрёнка! ❤️</h2>
-
-            <div class="message">
-                <p>В этот особенный день хочу пожелать тебе:</p>
-                <ul class="wishes-list">
-                    <li>✨ Безграничного счастья</li>
-                    <li>🌟 Исполнения всех мечтаний</li>
-                    <li>💖 Любви и тепла</li>
-                    <li>🎯 Успехов во всех начинаниях</li>
-                    <li>😊 Улыбок каждый день</li>
-                    <li>🌈 Ярких и незабываемых моментов</li>
-                </ul>
-                <p class="closing">Ты — самая лучшая сестра в мире! Пусть этот год принесёт тебе всё, о чём мечтаешь! 🎁</p>
+            <div class="polaroid-frame">
+                <div class="photo-placeholder">
+                    <div class="cake-animation">🎂</div>
+                    <div class="sparkles">✨</div>
+                </div>
+                <p class="polaroid-text">Самой лучшей сестре! ♥</p>
             </div>
 
-            <button class="surprise-btn" id="surpriseBtn">🎉 Нажми для сюрприза!</button>
+            <h1 class="main-title">
+                <span class="letter">С</span>
+                <span class="letter"> </span>
+                <span class="letter">Д</span>
+                <span class="letter">н</span>
+                <span class="letter">ё</span>
+                <span class="letter">м</span>
+                <span class="letter"> </span>
+                <span class="letter">Р</span>
+                <span class="letter">о</span>
+                <span class="letter">ж</span>
+                <span class="letter">д</span>
+                <span class="letter">е</span>
+                <span class="letter">н</span>
+                <span class="letter">и</span>
+                <span class="letter">я</span>
+                <span class="letter">!</span>
+            </h1>
 
-            <div class="photo-note">
-                💝 Храни радость в сердце и улыбку на лице! 💝
+            <div class="handwritten-note">
+                <p class="opening">Дорогая сестрёнка!</p>
+                <p class="message-text">
+                    Хочу пожелать тебе, чтобы каждый твой день был наполнен радостью и смехом! 
+                    Пусть сбываются все твои мечты, а рядом всегда будут любящие люди.
+                </p>
+
+                <div class="wishes-cards">
+                    <div class="wish-card" data-emoji="✨">
+                        <div class="emoji">✨</div>
+                        <p>Счастья без границ</p>
+                    </div>
+                    <div class="wish-card" data-emoji="🌟">
+                        <div class="emoji">🌟</div>
+                        <p>Исполнения мечтаний</p>
+                    </div>
+                    <div class="wish-card" data-emoji="💖">
+                        <div class="emoji">💖</div>
+                        <p>Любви и тепла</p>
+                    </div>
+                    <div class="wish-card" data-emoji="🎯">
+                        <div class="emoji">🎯</div>
+                        <p>Успехов во всём</p>
+                    </div>
+                    <div class="wish-card" data-emoji="😊">
+                        <div class="emoji">😊</div>
+                        <p>Улыбок каждый день</p>
+                    </div>
+                    <div class="wish-card" data-emoji="🌈">
+                        <div class="emoji">🌈</div>
+                        <p>Ярких моментов</p>
+                    </div>
+                </div>
+
+                <p class="closing">
+                    Спасибо за то, что ты есть! Ты делаешь мой мир ярче и лучше. 
+                    С любовью, твой брат ❤️
+                </p>
+            </div>
+
+            <button class="surprise-btn" id="surpriseBtn">
+                <span>🎁 Нажми на сюрприз!</span>
+            </button>
+
+            <div class="gift-box" id="giftBox">
+                <div class="gift-lid"></div>
+                <div class="gift-base"></div>
+                <div class="gift-bow">🎀</div>
             </div>
         </div>
     </div>
