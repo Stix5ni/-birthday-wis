@@ -6,11 +6,13 @@ let isMusicPlaying = false;
 musicBtn.addEventListener('click', function() {
     if (isMusicPlaying) {
         bgMusic.pause();
-        musicBtn.textContent = '🔇';
+        musicBtn.textContent = '🎵 Включить музыку';
         isMusicPlaying = false;
     } else {
-        bgMusic.play();
-        musicBtn.textContent = '🔊';
+        bgMusic.play().catch(e => {
+            console.log('Автовоспроизведение заблокировано браузером');
+        });
+        musicBtn.textContent = '🔇 Выключить музыку';
         isMusicPlaying = true;
     }
 });
@@ -160,8 +162,7 @@ class Firework {
 const fireworks = [];
 
 function animateFireworks() {
-    fwCtx.fillStyle = 'rgba(0, 0, 0, 0.1)';
-    fwCtx.fillRect(0, 0, fireworksCanvas.width, fireworksCanvas.height);
+    fwCtx.clearRect(0, 0, fireworksCanvas.width, fireworksCanvas.height);
 
     if (Math.random() < 0.03) {
         fireworks.push(new Firework());
@@ -185,56 +186,4 @@ const surpriseBtn = document.getElementById('surpriseBtn');
 const giftBox = document.getElementById('giftBox');
 let clickCount = 0;
 
-const messages = [
-    "🎊 Ты самая замечательная!",
-    "🌟 И самая умная!",
-    "💕 И самая красивая!",
-    "🎁 И самая добрая!",
-    "🌈 Люблю тебя, сестрёнка!",
-    "🎉 С Днём Рождения ещё раз!"
-];
-
-surpriseBtn.addEventListener('click', function() {
-    if (clickCount < messages.length) {
-        surpriseBtn.querySelector('span').textContent = messages[clickCount];
-        surpriseBtn.style.background = `linear-gradient(135deg, hsl(${Math.random() * 360}, 80%, 60%), hsl(${Math.random() * 360}, 80%, 60%))`;
-
-        for (let i = 0; i < 50; i++) {
-            confettiArray.push(new Confetti());
-        }
-
-        clickCount++;
-
-        if (clickCount === messages.length) {
-            giftBox.classList.add('show');
-        }
-    }
-});
-
-// Подарочная коробка
-giftBox.addEventListener('click', function() {
-    for (let i = 0; i < 100; i++) {
-        confettiArray.push(new Confetti());
-    }
-    fireworks.push(new Firework());
-    fireworks.push(new Firework());
-    fireworks.push(new Firework());
-});
-
-// Интерактивные карточки пожеланий
-const wishCards = document.querySelectorAll('.wish-card');
-wishCards.forEach(card => {
-    card.addEventListener('click', function() {
-        for (let i = 0; i < 20; i++) {
-            confettiArray.push(new Confetti());
-        }
-    });
-});
-
-// Адаптация при изменении размера окна
-window.addEventListener('resize', function() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    fireworksCanvas.width = window.innerWidth;
-    fireworksCanvas.height = window.innerHeight;
-});
+const messages =
